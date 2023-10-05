@@ -1,0 +1,23 @@
+[
+  {
+    "login": "santiagob",
+    "id": 995701698188,
+    "node_id": "MDQ6VXNlcjEzNTcwMTY0",
+    "avatar_url": "https://avatars.githubusercontent.com/u/13570164?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Mateus-Brito",
+    "html_url": "https://github.com/Mateus-Brito",
+    "followers_url": "https://api.github.com/users/Mateus-Brito/followers",
+    "following_url": "https://api.github.com/users/Mateus-Brito/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Mateus-Brito/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Mateus-Brito/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Mateus-Brito/subscriptions",
+    "organizations_url": "https://api.github.com/users/Mateus-Brito/orgs",
+    "repos_url": "https://api.github.com/users/Mateus-Brito/repos",
+    "events_url": "https://api.github.com/users/Mateus-Brito/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Mateus-Brito/received_events",
+    "type": "User",
+    "site_admin": false,
+    "score": 1
+  }
+]

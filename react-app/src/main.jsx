@@ -8,6 +8,9 @@ import {
 } from "react-router-dom";
 import ErrorPage from './components/ErrorPage.jsx';
 import UserDetail from './components/UserDetail.jsx';
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+import UsersSelect from './components/UsersSelect.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,10 +22,15 @@ const router = createBrowserRouter([
     path: "user/:login",
     element: <UserDetail />,
   },
+  {
+    path: "user/selected",
+    element: <UsersSelect />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
      <RouterProvider router={router} />
+     <ToastContainer position="bottom-right" />
   </React.StrictMode>,
 )

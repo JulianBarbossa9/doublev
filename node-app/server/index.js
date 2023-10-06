@@ -40,6 +40,14 @@ app.post('/save-user', (req, res) => {
       }
     }
 
+    const userExist = users.find(( userArr ) => userArr.id === user.id)
+
+
+    if (userExist) {
+      console.log('The user already exist')
+      return res.status(400).send('The user already exist')
+    }
+
     //Add the users to list
     users.push(user)
 

@@ -1,8 +1,12 @@
 const express = require("express")
 const fs = require('fs');
+const axios = require('axios')
 const PORT = process.env.PORT || 3001;
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors());
 
 // Middleware for parsear JSON in the request
 app.use(express.json());
@@ -15,8 +19,8 @@ app.get("/api", (req, res) => {
 
 //Save user in a JSON
 app.post('/save-user', (req, res) => {
+  // res.set('Access-Control-Allow-Origin', 'http://localhost:5173/user/Mateus-Brito')
   const user = req.body //We recibe the user when make a request post
-
   fs.readFile(path, 'utf-8', (err, data) => {
     if (err) {
       console.error('Error reading the file JSON: ', err)
@@ -116,6 +120,25 @@ app.get('/list-of-users', (req, res) => {
     }
     res.status(200).json(users)
   })
+})
+
+app.get('/show-users', async (req, res) => {
+  // const githubUserName = req.query.githubUserName
+  res.set('Access-Control-Allow-Origin', 'http://localhost:5173');
+  try {
+    const response = await axios.get('https://api.github.com/search/users?q=YOUR_NAME')
+
+    const userData = response.data
+
+    res.status(200).json(userData)
+  } catch (error) {
+    console.error('Error to get data for GitHub:', error);
+
+    // Manejar errores de manera adecuada, por ejemplo, devolver un error 500
+    res.status(500).json({ error: ' Intern error' });
+  }
+
+
 })
 
 app.listen(PORT, () => {
